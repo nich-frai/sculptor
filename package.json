@@ -1,0 +1,20 @@
+{
+  "name": "sculptor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "svelte": "^3.49.0",
+    "svelte-check": "^2.8.0",
+    "zod": "^3.17.3"
+  },
+  "peerDependencies": {
+    "zod": "^3.17.3"
+  }
+}
