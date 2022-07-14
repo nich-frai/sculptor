@@ -11,7 +11,6 @@
 
 <div
   class="theme-provider"
-  aria-hidden="true"
   style={printAsCSSVariables(flattenToCSSVariables(theme))}
 >
   <slot />

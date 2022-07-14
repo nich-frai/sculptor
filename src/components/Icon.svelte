@@ -26,15 +26,17 @@
 	.icon {
 		display: inline-flex;
 		aspect-ratio: 1;
-		width: var(--icon-size, 1em);
+		width: var(--icon-size, 1.1em);
 		padding: var(--icon-padding, 0);
 		align-content: center;
 		justify-content: center;
+		user-select: none;
+		pointer-events: none;
 	}
 
 	.icon-mask {
 		position: relative;
-		width: var(--icon-size, 1em);
+		width: var(--icon-size, 1.1em);
 		flex-basis: var(--icon-size);
 		aspect-ratio: 1;
 		mask-size: 100%;

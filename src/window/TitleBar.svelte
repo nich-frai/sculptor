@@ -44,7 +44,7 @@
       label="Minimize Window"
       --icon-button-hover-color="var(--color-success-700)"
       --icon-button-active-bg="var(--color-success-500)"
-      --icon-button-hover-bg,="var(--color-success)"
+      --icon-button-hover-bg="var(--color-success-200)"
     />
     <IconButton
       on:click={toggleMaximize}
@@ -52,7 +52,7 @@
       label="Maximize or Restore Window"
       --icon-button-hover-color="var(--color-info-700)"
       --icon-button-active-bg="var(--color-info-500)"
-      --icon-button-hover-bg="var(--color-info)"
+      --icon-button-hover-bg="var(--color-info-200)"
     />
     <IconButton
       on:click={close}
