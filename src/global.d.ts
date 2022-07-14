@@ -1,4 +1,5 @@
 /// <reference types="svelte" />
+/// <reference types="@tauri-apps/api" />
 
 declare namespace svelte.JSX {
 	interface HTMLProps<HTMLFormElement> {
