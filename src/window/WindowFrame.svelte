@@ -1,10 +1,9 @@
 <script lang="ts">
-import { DefaultTheme, TSculptorTheme } from "../theme/theme";
-
+  import { DefaultTheme, TSculptorTheme } from "../theme/theme";
   import ThemeProvider from "../theme/ThemeProvider.svelte";
   import TitleBar from "./TitleBar.svelte";
 
-	export let theme : TSculptorTheme = DefaultTheme; 
+  export let theme: TSculptorTheme = DefaultTheme;
 </script>
 
 <ThemeProvider {theme}>
