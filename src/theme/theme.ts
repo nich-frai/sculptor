@@ -1,14 +1,13 @@
 import type { PartialDeep } from 'type-fest';
 import { deepmerge } from '../utils/deepmerge';
-import type { TFlattenAsCSSVar } from '../utils/flatten_css_var';
 
 export const DefaultTheme = {
 	
 	color : {
 		primary : {
-			'h' : '156',
-			's' : '65%',
-			'l' : '35%',
+			'h' : '165',
+			's' : '75%',
+			'l' : '25%',
 			'' : 'hsl($.h, $.s, $.l)',
 			50 : 'hsl($.h, $.s, 90%)',
 			900 : 'hsl($.h, $.s, 10%)',
@@ -82,8 +81,6 @@ export const DefaultTheme = {
 
 	},
 
-
-
 	// Components
 	titlebar : {
 		height: 'clamp(30px, 5vh, 60px)'
@@ -99,10 +96,15 @@ export const DefaultTheme = {
 		}
 	},
 
+	'vertical-separator' : {
+		width: '2px',
+		height: '100%',
+	},
+
 };
 
 export type TSculptorTheme = typeof DefaultTheme;
 
-export function customizeTheme<T extends PartialDeep<TSculptorTheme> & TFlattenAsCSSVar>(options: T) {
-	return deepmerge(DefaultTheme, options);
+export function customizeTheme<T extends PartialDeep<TSculptorTheme>>(options: T) : TSculptorTheme {
+	return deepmerge(DefaultTheme, options) as TSculptorTheme;
 }

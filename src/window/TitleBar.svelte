@@ -2,6 +2,7 @@
   import { window } from "@tauri-apps/api";
   import { onMount } from "svelte";
   import IconButton from "../components/IconButton.svelte";
+  import VerticalSeparator from "../components/VerticalSeparator.svelte";
   
   let isMaximized: boolean = false;
 
@@ -38,6 +39,9 @@
   </div>
   <div class="window-controls" on:dblclick={toggleMaximize}>
     <slot name="window-controls" />
+    {#if $$slots['window-controls']}
+      <VerticalSeparator --vertical-separator-height="1.8em" />
+    {/if}
     <IconButton
       on:click={minimize}
       src="minus"
@@ -73,7 +77,7 @@
     display: flex;
     flex-direction: row;
     z-index: var(--titlebar-z-index, 9999);
-    background-color: var(--surface-1);
+    background-color: var(--titlebar-bg, var(--surface-0));
   }
   .titlebar-content {
     display: contents;
