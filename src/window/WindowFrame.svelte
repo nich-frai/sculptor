@@ -27,6 +27,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    min-width: 800px;
     overflow: hidden;
     background-color: var(--surface-1);
   }
@@ -37,7 +38,9 @@
     height: calc(100% - var(--titlebar-height));
     left: 0;
     width: 100%;
+    min-height: 480px;
     overflow: hidden;
+    z-index: 1;
   }
   .window-controls > :global(*:first-child) {
     flex-grow: 1;

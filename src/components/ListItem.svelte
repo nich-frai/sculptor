@@ -32,12 +32,20 @@
 		display: grid;
 		width: 100%;
 		height: var(--item-height, 3rem);
+		--list-item-height: var(--item-height, 3rem);
 		border-radius: var(--radius-1);
 		background-color: var(--list-item-bg, --surface-1);
 		transition: background-color var(--transition-duration, 250ms);
-		grid-template-columns: var(--item-height, 3rem) 1fr;
+		grid-template-columns: var(--list-item-height, 3rem) 1fr;
 		grid-template-rows: var(--item-height, 3rem);
 		column-gap: 0.5rem;
+	}
+
+	.list-item.compact {
+		height: calc(var(--item-height, 3rem) / 2);
+		font-size: 1rem;
+		font-weight: 200;
+		--list-item-height: calc(var(--item-height, 3rem) / 2);
 	}
 
 	.list-item:hover {
@@ -47,7 +55,7 @@
 	.icon,
 	.icon-placeholder {
 		aspect-ratio: 1;
-		height: var(--item-height, 3rem);
+		height: var(--list-item-height, 3rem);
 		border-radius: var(--radius-1);
 		overflow: hidden;
 	}
@@ -57,6 +65,7 @@
 
 	.text {
 		display: flex;
+		height: var(--list-item-height, 3rem);
 		flex-direction: column;
 		justify-content: center;
 	}

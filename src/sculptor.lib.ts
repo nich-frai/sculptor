@@ -2,6 +2,7 @@ export { default as Icon } from './components/Icon.svelte';
 export { default as IconButton } from './components/IconButton.svelte';
 export { default as VerticalSeparator } from './components/VerticalSeparator.svelte';
 export { default as ListItem } from './components/ListItem.svelte';
+export { default as Button } from './components/Button.svelte';
 
 export { default as TitleBar } from './window/TitleBar.svelte';
 export { default as WindowFrame } from './window/WindowFrame.svelte';
