@@ -89,6 +89,11 @@
     display: flex;
     align-items: center;
     padding: 0 0.5em;
-    column-gap: 0.5rem;
+    column-gap: 0.75rem;
+    --icon-size: 1em;
+  }
+  .window-controls > :global(:first-child) {
+    flex-grow: 1;
+    
   }
 </style>

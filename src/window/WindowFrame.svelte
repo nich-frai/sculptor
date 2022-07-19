@@ -28,7 +28,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--surface-2);
+    background-color: var(--surface-1);
   }
 
   .window-content {
@@ -38,5 +38,8 @@
     left: 0;
     width: 100%;
     overflow: hidden;
+  }
+  .window-controls > :global(*:first-child) {
+    flex-grow: 1;
   }
 </style>

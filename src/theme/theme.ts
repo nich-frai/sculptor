@@ -3,6 +3,7 @@ import { deepmerge } from '../utils/deepmerge';
 
 export const DefaultTheme = {
 
+	'item-height' : '3rem',
 	color: {
 		primary: {
 			'h': '165',
@@ -102,6 +103,7 @@ export const DefaultTheme = {
 
 	// Components
 	titlebar: {
+		bg : 'var(--surface-1)',
 		height: 'clamp(30px, 5vh, 60px)'
 	},
 
@@ -119,6 +121,14 @@ export const DefaultTheme = {
 		width: '2px',
 		height: '100%',
 	},
+
+	'list-item' : {
+		subtitle : {
+			size : '0.8em',
+			weight : '100',
+			color: 'var(--text-color-on-surface-1)'
+		}
+	}
 
 };
 
