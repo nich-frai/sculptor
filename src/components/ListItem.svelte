@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="list-item {$$props.class}"
+	class="list-item {$$props.class ?? ''}"
 	class:hidden-icon={hideIcon}
 	class:compact
 	class:inverted-subtitle={subtitleFirst}
