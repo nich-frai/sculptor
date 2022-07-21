@@ -49,6 +49,8 @@
 		-webkit-mask-image: var(--icon-source);
 
 		background-color:  var(--icon-color, #000);
+
+		transition: background-color var(--transition-duration);
 	}
 
 	.icon:hover .icon-mask {

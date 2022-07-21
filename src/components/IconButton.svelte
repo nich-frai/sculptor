@@ -1,12 +1,14 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
 
+	export let style : 'ghost' | 'subtle' | 'filled' | 'outline' | 'text' = 'subtle';
+
   export let label: string;
 	export let src : string;
 
 </script>
 
-<button aria-label={label} on:click on:dblclick on:contextmenu >
+<button aria-label={label} on:click on:dblclick on:contextmenu class=" icon-button style-{style} {$$props.class}">
   <Icon {src} />
 </button>
 
@@ -37,4 +39,5 @@
     background-color: var(--icon-button-active-bg, var(--icon-button-bg, var(--surface-1)));
     --icon-color: var(--icon-button-active-color);
   }
+  
 </style>

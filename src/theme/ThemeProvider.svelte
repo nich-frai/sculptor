@@ -25,7 +25,8 @@
     font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
       sans-serif;
-    font-size: clamp(8pt, calc(8pt + 0.290625vw), 18pt);
+    font-size: clamp(7pt, calc(7pt + 0.290825vw), 18pt);
+    accent-color: var(--color-primary);
   }
   :global(:where(div)) {
     box-sizing: border-box;

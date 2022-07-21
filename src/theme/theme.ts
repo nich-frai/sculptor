@@ -11,6 +11,7 @@ export const DefaultTheme = {
 			'l': '25%',
 			'': 'hsl($.h, $.s, $.l)',
 			50: 'hsl($.h, $.s, 90%)',
+			700 : 'hsl($.h, $.s, 20%)',
 			900: 'hsl($.h, $.s, 10%)',
 			'darker': '#5c9d8b'
 		},
@@ -60,7 +61,12 @@ export const DefaultTheme = {
 				1: '#f8f8f8',
 				2: '#f0f0f0',
 				3: '#e9e9e9'
-			}
+			},
+			'on-primary' : {
+				'' : '#fefefe',
+				700 : '#fcfcfc',
+				900 : '#ffffff'
+						}
 		}
 	},
 
