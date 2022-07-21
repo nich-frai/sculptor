@@ -81,7 +81,7 @@
   }
   .titlebar-content {
     display: contents;
-    pointer-events: none;
+    user-select: none;
   }
 
   .window-controls {

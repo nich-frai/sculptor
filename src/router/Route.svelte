@@ -1,26 +1,29 @@
 <script lang="ts">
   import { match } from "path-to-regexp";
-  import { getContext } from "svelte";
+  import { getContext, onMount } from "svelte";
   import type { RouteNavigator } from "./navigator";
 
   export let path: string;
   const pathMatcher = match(path);
-  const navigator = getContext<RouteNavigator>("navigator");
 
   let urlParams: Record<string, string> = {};
   let state: Record<string, unknown> = {};
+  const navigator = getContext<RouteNavigator>("navigator");
+  const basePath = getContext<string>("navigator-base-path");
 
-  navigator.state.subscribe((current) => {
-    let matches = pathMatcher(current.path);
-    if (matches !== false) {
-      urlParams = matches.params as Record<string, string>;
-      state = current.state;
-      isActive = true;
-    } else {
-      urlParams = {};
-      state = {};
-      isActive = false;
-    }
+  onMount(() => {
+    navigator?.state.subscribe((current) => {
+      let matches = pathMatcher(current.path);
+      if (matches !== false) {
+        urlParams = matches.params as Record<string, string>;
+        state = current.state;
+        isActive = true;
+      } else {
+        urlParams = {};
+        state = {};
+        isActive = false;
+      }
+    });
   });
 
   let isActive: boolean = false;

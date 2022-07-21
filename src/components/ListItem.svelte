@@ -9,6 +9,7 @@
 	class:hidden-icon={hideIcon}
 	class:compact
 	class:inverted-subtitle={subtitleFirst}
+	on:click
 >
 	<div class="icon">
 		<slot name="icon">

@@ -13,4 +13,13 @@ export { default as WindowFrame } from './window/WindowFrame.svelte';
 export { default as ThemeProvider } from './theme/ThemeProvider.svelte';
 export { customizeTheme, type TSculptorTheme, DefaultTheme } from './theme/theme';
 
+export { persistRouterStateInLocalStorage, persistRouterStateInUrl} from './router/state_storage';
+
+// Router and navigation
+export { default as Router } from './router/Router.svelte';
+export { default as Route } from './router/Route.svelte';
+export { default as Link } from './router/Link.svelte';
+export { RouteNavigator } from './router/navigator';
+export { type TRouterState, router} from './router/use_router';
+
 export { type TFlattenAsCSSVar as FlattenableAsCSSVar, flattenToCSSVariables, printAsCSSVariables } from './utils/flatten_css_var';

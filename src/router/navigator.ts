@@ -12,6 +12,9 @@ export class RouteNavigator {
 	) {}
 
 	navigate(to : string, state? : Record<string, unknown>) {
-		let normalize;
+		this.store.set({
+			path : to,
+			state : state ?? {}
+		});
 	}
 }
