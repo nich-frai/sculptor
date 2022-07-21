@@ -48,9 +48,9 @@ export const DefaultTheme = {
   text: {
     color: {
       "on-surface": {
-        "": "var(--color-primary-900)",
-        1: "#404040",
-        2: "#3a3a3a",
+        "": "#3c3c3c",
+        1: "#2f2f2f",
+        2: "#292929",
         3: "#202020",
       },
       "on-contrast-surface": {

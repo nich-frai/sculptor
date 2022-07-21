@@ -11,6 +11,7 @@
 </script>
 
 <button
+  title={label}
   aria-label={label}
   on:click
   on:dblclick
@@ -34,7 +35,7 @@
     background-color: var(--icon-button-bg, var(--surface-1));
     transition: background-color var(--transition-duration, 250ms);
     box-sizing: border-box;
-    padding: 0.25em;
+    padding: var(--icon-button-padding, 0.25em);
   }
 
   button:focus {

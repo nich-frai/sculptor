@@ -21,7 +21,7 @@ export function persistRouterStateInLocalStorage(
 				urlParams.set(stateKey, serialized);
 			}
 
-			let stateURL = `${path}?${urlParams.toString()}`
+			let stateURL = `${path}${urlParams.toString() === '' ? '' : '?' + urlParams.toString()}`;
 			storage?.setItem(storageKey, stateURL);
 		},
 		get() {
@@ -29,12 +29,16 @@ export function persistRouterStateInLocalStorage(
 			if (stateURL == null) {
 				return { path: '', state: {} };
 			} else {
-				let urlParams = new URLSearchParams(stateURL);
-				let path = stateURL.indexOf('?') >= 0 ? stateURL.substring(0, stateURL.indexOf('?')) : stateURL;
+
+				const hasUrlParams = stateURL.indexOf('?') >= 0;
+
+				let path = hasUrlParams ? stateURL.substring(0, stateURL.indexOf('?')) : stateURL;
 				let state: Record<string, unknown> = {};
-				for (let p in urlParams) {
-					let value = urlParams.get(p);
-					state[p] = value;
+				if (hasUrlParams) {
+					let urlParams = new URLSearchParams(stateURL.substring(1));
+					urlParams.forEach((v, k) => {
+						state[k] = v;
+					});
 				}
 				return { path, state };
 			}

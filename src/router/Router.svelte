@@ -23,7 +23,7 @@
   );
 
   let currentState: Writable<TRouterState> = writable({
-    path: "/",
+    path: "",
     state: {},
   });
   const parentRouter = getContext<RouteNavigator>("navigator");
@@ -59,7 +59,7 @@
 
 {#if root || isRouterVisible}
   <div class="router" class:root data-name={name}>
-    <slot />
+    <slot url={$currentState.path} state={$currentState.state} navigator={navigator}/>
   </div>
 {/if}
 

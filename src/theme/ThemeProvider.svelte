@@ -19,6 +19,7 @@
 <style>
   .theme-provider {
     display: contents;
+    color: var(--text-color-on-surface);
   }
 
   :global(:where(html)) {
@@ -27,6 +28,7 @@
       sans-serif;
     font-size: clamp(7pt, calc(7pt + 0.290825vw), 18pt);
     accent-color: var(--color-primary);
+    color: var(--text-color-on-surface);
   }
   :global(:where(div)) {
     box-sizing: border-box;

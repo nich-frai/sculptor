@@ -6,6 +6,7 @@ export { default as ListItem } from './components/ListItem.svelte';
 export { default as Button } from './components/Button.svelte';
 export { default as RadioGroup } from './components/RadioGroup.svelte';
 export { default as RadioItem } from './components/RadioItem.svelte';
+export { default as PageTitle } from './components/PageTitle.svelte';
 
 export { default as TitleBar } from './window/TitleBar.svelte';
 export { default as WindowFrame } from './window/WindowFrame.svelte';

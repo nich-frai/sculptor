@@ -11,7 +11,7 @@ export class RouteNavigator {
 		private store : Writable<TRouterState>
 	) {}
 
-	navigate(to : string, state? : Record<string, unknown>) {
+	go(to : string, state? : Record<string, unknown>) {
 		this.store.set({
 			path : to,
 			state : state ?? {}
