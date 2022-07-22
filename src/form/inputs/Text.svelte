@@ -24,22 +24,22 @@
 <style>
 	.input-label {
 		font-weight: 200;
-		font-size: 0.9em;
-		margin-bottom: 0.25em;
+		font-size: 0.9rem;
+		margin-bottom: 0.25rem;
 	}
 	input {
 		border: 0;
-		padding: 0.5em 1em;
+		padding: 0.5rem 1rem;
 		border-radius: var(--radius-2);
 		background-color: var(--surface-1);
 		width: 100%;
 		box-sizing: border-box;
-		font-size: 0.9em;
+		font-size: 0.9rem;
 	}
 	.help-text {
 		font-style: italic;
 		font-weight: 200;
-		font-size: 0.7em;
+		font-size: 0.7rem;
 		opacity: 0.8;
 	}
 	

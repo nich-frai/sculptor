@@ -21,9 +21,9 @@
     margin: 1rem 0;
     padding: 0;
 		display: flex;
-		column-gap: 0.5em;
-		font-size: 1.4em;
-		line-height: 1.4em;
+		column-gap: 0.5rem;
+		font-size: 1.4rem;
+		line-height: 1.4rem;
 		align-items: center;
 		vertical-align: middle;
   }
@@ -31,7 +31,7 @@
 		display: contents;
 	}
 	.title-decoration {
-		height: 1.4em;
+		height: 1.4rem;
 		width: 4pt;
 		border-top-left-radius: var(--radius-1);
 		border-bottom-left-radius: var(--radius-1);

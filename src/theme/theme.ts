@@ -184,7 +184,7 @@ export const DefaultTheme = {
 
   "list-item": {
     subtitle: {
-      size: "0.8em",
+      size: "0.8rem",
       weight: "100",
       color: "var(--text-color-on-surface-1)",
     },

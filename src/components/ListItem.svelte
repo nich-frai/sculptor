@@ -75,7 +75,7 @@
 		flex-flow: column-reverse;
 	}
 	.subtitle {
-		font-size: var(--list-item-subtitle-size, 0.8em);
+		font-size: var(--list-item-subtitle-size, 0.8rem);
 		font-weight: var(--list-item-subtitle-weight, 100);
 		opacity: 0.95;
 		color: var(--list-item-subtitle-color, var(--text-color-on-surface-1));

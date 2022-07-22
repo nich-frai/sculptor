@@ -68,4 +68,21 @@ align != null ? `text-align: ${align}` : ''
 		background-color: var(--color-primary-900);
 		color: var(--text-color-on-primary-900);
 	}
+
+	button.outline {
+		background-color: var(--button-outline-bg, var(--surface-1));
+		border: 2px solid var(--button-outline-border-color, var(--color-primary));
+		color: var(--button-outline-color, var(--text-color-on-surface));
+		transition: border var(--transition-duration), background-color var(--transition-duration), color var(--transition-duration);
+	}
+	button.outline:hover {
+		background-color: var(--button-outline-hover-bg, var(--surface-2));
+		border: 2px solid var(--button-outline-hover-border-color, var(--color-primary-600));
+		color: var(--button-outline-hover-color, var(--text-color-on-surface-2));
+	}
+	button.outline:active {
+		background-color: var(--button-outline-active-bg, var(--surface-3));
+		border: 2px solid var(--button-outline-active-border-color, var(--color-primary-800));
+		color: var(--button-outline-active-color, var(--text-color-on-surface-3));
+	}
 </style>

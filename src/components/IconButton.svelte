@@ -16,7 +16,7 @@
   on:click
   on:dblclick
   on:contextmenu
-  class=" icon-button style-{style} {$$props.class ?? ''}"
+  class=" icon-button {style} {$$props.class ?? ''}"
   style="{size != null ? 'height: ' + size : ''}
 "
 >
@@ -35,7 +35,7 @@
     background-color: var(--icon-button-bg, var(--surface-1));
     transition: background-color var(--transition-duration, 250ms);
     box-sizing: border-box;
-    padding: var(--icon-button-padding, 0.25em);
+    padding: var(--icon-button-padding, 0.25rem);
   }
 
   button:focus {
@@ -63,4 +63,18 @@
     );
     --icon-color: var(--icon-button-active-color);
   }
+
+  button.filled {
+		background-color: var(--color-primary);
+		--icon-color: var(--text-color-on-primary);
+		transition: background-color var(--transition-duration);
+	}
+	button.filled:hover {
+		background-color: var(--color-primary-700);
+		--icon-color: var(--text-color-on-primary-700);
+	}
+	button.filled:active {
+		background-color: var(--color-primary-900);
+		--icon-color: var(--text-color-on-primary-900);
+	}
 </style>

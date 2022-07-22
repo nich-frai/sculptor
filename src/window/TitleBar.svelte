@@ -43,7 +43,7 @@
   <div class="window-controls" on:dblclick={toggleMaximize}>
     <slot name="window-controls" />
     {#if $$slots['window-controls'] && isInTauriApp}
-      <VerticalSeparator --vertical-separator-height="1.8em" />
+      <VerticalSeparator --vertical-separator-height="1.8rem" />
     {/if}
     {#if isInTauriApp}
     <IconButton
@@ -93,9 +93,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0 0.5em;
+    padding: 0 0.5rem;
     column-gap: 0.75rem;
-    --icon-size: 1em;
+    --icon-size: 1rem;
   }
   .window-controls > :global(:first-child) {
     flex-grow: 1;
