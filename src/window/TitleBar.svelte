@@ -1,32 +1,35 @@
 <script lang="ts">
-  import { window } from "@tauri-apps/api";
+  import { window as tauriWindow } from "@tauri-apps/api";
   import { onMount } from "svelte";
   import IconButton from "../components/IconButton.svelte";
   import VerticalSeparator from "../components/VerticalSeparator.svelte";
   
   let isMaximized: boolean = false;
+  let isInTauriApp = "__TAURI__" in window;
 
   async function toggleMaximize() {
     if(isMaximized) {
-      window.appWindow.unmaximize();
+      tauriWindow.appWindow.unmaximize();
     } else {
-      window.appWindow.maximize();
+      tauriWindow.appWindow.maximize();
     }
     isMaximized = !isMaximized;
   }
   
   function minimize() {
-    window.appWindow.minimize();
+    tauriWindow.appWindow.minimize();
   }
 
   onMount(async () => {
-    isMaximized = await window.appWindow.isMaximized();
+    if(isInTauriApp) {
+      isMaximized = await tauriWindow.appWindow.isMaximized();
+    }
   });
 
   async function close() {
     let canClose = await confirm("Deseja mesmo encerrar o programa?");
     if (canClose === true) {
-      window.appWindow.close();
+      tauriWindow.appWindow.close();
     } else {
       console.log(canClose);
     }
@@ -39,9 +42,10 @@
   </div>
   <div class="window-controls" on:dblclick={toggleMaximize}>
     <slot name="window-controls" />
-    {#if $$slots['window-controls']}
+    {#if $$slots['window-controls'] && isInTauriApp}
       <VerticalSeparator --vertical-separator-height="1.8em" />
     {/if}
+    {#if isInTauriApp}
     <IconButton
       on:click={minimize}
       src="minus"
@@ -64,8 +68,9 @@
       label="Close Window"
       --icon-button-hover-color="var(--color-error-700)"
       --icon-button-active-bg="var(--color-error-500)"
-      --icon-button-hover-bg="var(--color-error)"
+      --icon-button-hover-bg="var(--color-error-300)"
     />
+    {/if}
   </div>
 </div>
 

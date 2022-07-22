@@ -3,7 +3,7 @@
 	export let value : string = '';
 	export let placeholder : string = '';
 	export let required : boolean = false;
-
+	export let name : string = '';
 </script>
 
 <!-- svelte-ignore a11y-label-has-associated-control -->
@@ -12,7 +12,7 @@
 		{label}
 	</span>
 	<div class="input-container">
-		<input type="text" bind:value={value} {placeholder} {required} />
+		<input type="text" bind:value={value} {name} {placeholder} {required} />
 	</div>
 	{#if $$slots.help}
 	<span class="help-text">

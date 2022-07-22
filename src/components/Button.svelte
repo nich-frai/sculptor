@@ -1,9 +1,11 @@
 <script lang="ts">
 	export let style : 'ghost' | 'subtle' | 'filled' | 'outline' | 'text' = 'subtle';
 	export let size : 'small' | 'medium' | 'large' | undefined = undefined;
-
+	export let align: 'left' | 'start' | 'end' | 'center' | 'right' | undefined = undefined;
 </script>
-<button on:click on:contextmenu on:dblclick class="{style} {size != null ? `${size}-size` : ''} {$$props.class ?? ''}">
+<button on:click on:contextmenu on:dblclick class="{style} {size != null ? `${size}-size` : ''} {$$props.class ?? ''}" style="{
+align != null ? `text-align: ${align}` : ''
+}">
 	<slot></slot>
 </button>
 <style>
@@ -15,6 +17,10 @@
 		padding: var(--button-padding, 0);
 		width: 100%;
 		border-radius: var(--radius-1);
+		display: flex;
+		column-gap: 0.5em;
+		align-items: center;
+
 	}
 
 	button.small-size {

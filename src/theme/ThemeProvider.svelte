@@ -11,7 +11,7 @@
 
 <div
   class="theme-provider"
-  style={printAsCSSVariables(flattenToCSSVariables(theme))}
+  style={printAsCSSVariables(flattenToCSSVariables(theme)) + ';' + printAsCSSVariables(flattenToCSSVariables(theme))}
 >
   <slot />
 </div>
@@ -20,6 +20,7 @@
   .theme-provider {
     display: contents;
     color: var(--text-color-on-surface);
+    accent-color: var(--color-primary);
   }
 
   :global(:where(html)) {

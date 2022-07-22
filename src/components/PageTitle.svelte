@@ -18,7 +18,7 @@
 
 <style>
   h1 {
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
 		display: flex;
 		column-gap: 0.5em;

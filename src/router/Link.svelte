@@ -4,18 +4,18 @@
 
   export let href: string;
   export let state: Record<string, unknown> = {};
-	export let targetRoot : boolean = false;
-	// export let target : string | undefined = undefined; - TODO: allow named router navigation
+  export let targetRoot: boolean = false;
+  // export let target : string | undefined = undefined; - TODO: allow named router navigation
 
   const navigator = getContext<RouteNavigator>("navigator");
-		const rootNavigator = getContext<RouteNavigator>("root-navigator");
+  const rootNavigator = getContext<RouteNavigator>("root-navigator");
 
   export function navigate() {
-		if(targetRoot){
-			rootNavigator.navigate(href, state);
-		} else {
-			navigator.navigate(href, state);
-		}
+    if (targetRoot) {
+      rootNavigator.go(href, state);
+    } else {
+      navigator.go(href, state);
+    }
   }
 </script>
 
