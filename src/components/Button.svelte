@@ -2,9 +2,11 @@
 	export let style : 'ghost' | 'subtle' | 'filled' | 'outline' | 'text' = 'subtle';
 	export let size : 'small' | 'medium' | 'large' | undefined = undefined;
 	export let align: 'left' | 'start' | 'end' | 'center' | 'right' | undefined = undefined;
+	export let type: string = "button";
+
 </script>
-<button on:click on:contextmenu on:dblclick class="{style} {size != null ? `${size}-size` : ''} {$$props.class ?? ''}" style="{
-align != null ? `text-align: ${align}` : ''
+<button on:click on:contextmenu on:dblclick {type} class="{style} {size != null ? `${size}-size` : ''} {$$props.class ?? ''}" style="{
+align != null ? `justify-content: ${align};` : ''
 }">
 	<slot></slot>
 </button>
