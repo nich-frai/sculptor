@@ -127,7 +127,7 @@ export const DefaultTheme = {
   radius: ["0px", "3px", "5px", "7px", "10px"],
 
   surface: {
-    "0": "transparent",
+    "0": "#f8f8f8",
     "1": "rgba(0,0,0,0.05)",
     "2": "rgba(0,0,0,0.1)",
     "3": "rgba(0,0,0,0.15)",

@@ -1,4 +1,6 @@
 <script lang="ts">
+import { onMount, onDestroy} from "svelte";
+
   import {
     flattenToCSSVariables,
     printAsCSSVariables,
@@ -7,11 +9,27 @@
   import { DefaultTheme, type TSculptorTheme } from "./theme";
 
   export let theme: TSculptorTheme = DefaultTheme;
+
+  let themeStyleAttr : HTMLStyleElement;
+
+  onMount(() => {
+    themeStyleAttr = document.createElement('style');
+    themeStyleAttr.textContent = `
+    :root {
+      ${printAsCSSVariables(flattenToCSSVariables(theme))}
+    }
+    `;
+
+    document.body.prepend(themeStyleAttr);
+  });
+
+  onDestroy(() => {
+    themeStyleAttr.remove();
+  });
 </script>
 
 <div
   class="theme-provider"
-  style={printAsCSSVariables(flattenToCSSVariables(theme)) + ';' + printAsCSSVariables(flattenToCSSVariables(theme))}
 >
   <slot />
 </div>

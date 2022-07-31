@@ -29,7 +29,7 @@
     height: 100vh;
     min-width: 430px;
     overflow: hidden;
-    background-color: var(--surface-1);
+    background-color: var(--surface-0);
   }
 
   .window-content {

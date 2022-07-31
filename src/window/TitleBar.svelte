@@ -83,7 +83,6 @@
     flex-direction: row;
     z-index: var(--titlebar-z-index, 9999);
     background-color: var(--titlebar-bg, var(--surface-0));
-    box-shadow: var(--elevation-1);
   }
   .titlebar-content {
     display: contents;

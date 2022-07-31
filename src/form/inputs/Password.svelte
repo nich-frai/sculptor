@@ -29,7 +29,7 @@
   }
   input {
     border: 0;
-    padding: var(--text-input-padding, 0.5rem 1rem);
+    padding: var(--password-input-padding, var(--text-input-padding, 0.5rem 1rem));
     border-radius: var(--radius-2);
     background-color: var(--surface-1);
     width: 100%;
