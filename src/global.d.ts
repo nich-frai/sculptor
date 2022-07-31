@@ -8,8 +8,10 @@ declare namespace svelte.JSX {
 	interface SvelteInputProps {
 		type?: string;
 		name?: string;
+		value? : string;
 		placeholder?: string;
 		checked?: boolean;
+		required? : boolean;
 		onclick? : CompositionEvent<T>;
 		onchange? : CompositionEvent<T>;
 	}

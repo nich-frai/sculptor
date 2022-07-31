@@ -19,6 +19,8 @@ export { customizeTheme, type TSculptorTheme, DefaultTheme } from './theme/theme
 
 // Form components
 export { default as TextInput } from './form/inputs/Text.svelte';
+export { default as PasswordInput } from './form/inputs/Password.svelte';
+export { default as CheckboxInput } from './form/inputs/Checkbox.svelte';
 export { default as Textarea } from './form/inputs/Textarea.svelte';
 export { default as CheckboxButton } from './form/inputs/CheckboxButton.svelte';
 
