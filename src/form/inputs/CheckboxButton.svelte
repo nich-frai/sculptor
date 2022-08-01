@@ -58,20 +58,20 @@
   }
   .input-container {
     position: relative;
-    width: 14pt;
-    height: 14pt;
+    width: 13pt;
+    height: 13pt;
   }
   input[type="checkbox"] {
     position: absolute;
     top: 0;
     left: 0;
     appearance: none;
-    border: 2px solid var(--surface-4);
+    border: 1px solid var(--surface-4);
     border-radius: 50%;
     background-color: var(--surface-1);
     color: var(--surface-contrast-1);
-    width: 14pt;
-    height: 14pt;
+    width: 13pt;
+    height: 13pt;
     margin: 0;
   }
   input[type="checkbox"]::before {
@@ -86,21 +86,24 @@
     font-weight: bold;
   }
   input[type="checkbox"]:checked {
-    border: 2px solid var(--color-primary);
+    border: 1px solid var(--color-primary);
   }
   .checkmark {
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -5pt;
-    width: 10pt;
-    height: 10pt;
+    margin: -4.5pt;
+    width: 9pt;
+    height: 9pt;
+    transform-origin: center center;
+    transform: rotate(-45deg) scale(10%);
+    transition: transform var(--transition-duration), opacity var(--transition-duration);
   }
   .checkmark svg {
     position: absolute; 
-    width: 10pt;
-    height: 10pt;
+    width: 9pt;
+    height: 9pt;
     aspect-ratio: 1;
   }
   .checkmark svg polyline {
@@ -114,6 +117,9 @@
   }
   label :global(button.checked) {
     --button-outline-border-color: var(--color-primary);
-
+  }
+  input[type="checkbox"]:checked ~ .checkmark {
+    opacity:1;
+    transform: rotate(0deg) scale(100%);
   }
 </style>

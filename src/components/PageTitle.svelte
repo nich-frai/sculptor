@@ -21,9 +21,9 @@
     margin: 1rem 0;
     padding: 0;
 		display: flex;
-		column-gap: 0.5rem;
-		font-size: 1.6rem;
-		line-height: 1.6rem;
+		column-gap: 0.75rem;
+		font-size: var(--page-title-size, 1.6rem);
+		line-height: var(--page-title-size, 1.6rem);
 		align-items: center;
 		vertical-align: middle;
   }
@@ -31,7 +31,7 @@
 		display: contents;
 	}
 	.title-decoration {
-		height: 1.4rem;
+		height: calc(var(--page-title-size, 1.6rem) * 1.2) ;
 		width: 4pt;
 		border-top-left-radius: var(--radius-1);
 		border-bottom-left-radius: var(--radius-1);

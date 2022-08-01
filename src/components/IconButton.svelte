@@ -27,7 +27,7 @@
   button {
     position: relative;
     border: 0;
-    border-radius: var(--radius-1);
+    border-radius: var(--icon-button-radius, var(--button-radius, var(--radius-1, 4px)));
     display: flex;
     aspect-ratio: 1;
     align-items: center;

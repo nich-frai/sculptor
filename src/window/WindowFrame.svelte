@@ -2,19 +2,22 @@
   import { DefaultTheme, TSculptorTheme } from "../theme/theme";
   import ThemeProvider from "../theme/ThemeProvider.svelte";
   import TitleBar from "./TitleBar.svelte";
+  import { crossfade } from 'svelte/transition';
+  
+  let [ send, receive] = crossfade({ duration : 100 });
 
   export let theme: TSculptorTheme = DefaultTheme;
 </script>
 
 <ThemeProvider {theme}>
-  <main>
+  <main in:receive={{ key : 'in'}} out:send={{key : 'in'}}>
     <TitleBar>
       <slot name="titlebar" />
       <div class="window-controls" slot="window-controls">
         <slot name="window-controls" />
       </div>
     </TitleBar>
-    <section class="window-content">
+    <section class="window-content" >
       <slot />
     </section>
   </main>
