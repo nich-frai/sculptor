@@ -11,7 +11,7 @@
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <label>
   <Button
-    class="{checked ? 'checked' : ''}"
+    class={checked ? "checked" : ""}
     style="outline"
     on:click={() => {
       checked = !checked;
@@ -42,7 +42,9 @@
       </span>
     </div>
 
-    {label}
+    <span class="text-label">
+      {label}
+    </span>
     {#if checked}
       <slot />
     {/if}
@@ -57,9 +59,10 @@
     align-items: center;
   }
   .input-container {
+    --checkbox-size: 12pt;
     position: relative;
-    width: 13pt;
-    height: 13pt;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
   }
   input[type="checkbox"] {
     position: absolute;
@@ -70,40 +73,32 @@
     border-radius: 50%;
     background-color: var(--surface-1);
     color: var(--surface-contrast-1);
-    width: 13pt;
-    height: 13pt;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
     margin: 0;
   }
-  input[type="checkbox"]::before {
-    content: "";
-    font-size: 1.4em;
-    transition: color var(--transition-duration-fast),
-      font-size var(--transition-duration-fast);
-  }
-  input[type="checkbox"]:checked::before {
-    color: var(--color-on-primary);
-    font-size: 1.2em;
-    font-weight: bold;
-  }
+ 
   input[type="checkbox"]:checked {
     border: 1px solid var(--color-primary);
   }
   .checkmark {
+    --checkmark-size: 8pt;
     opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -4.5pt;
-    width: 9pt;
-    height: 9pt;
+    margin: calc(-1/2 * var(--checkmark-size));
+    width: var(--checkmark-size);
+    height: var(--checkmark-size);
     transform-origin: center center;
     transform: rotate(-45deg) scale(10%);
-    transition: transform var(--transition-duration), opacity var(--transition-duration);
+    transition: transform var(--transition-duration),
+      opacity var(--transition-duration);
   }
   .checkmark svg {
-    position: absolute; 
-    width: 9pt;
-    height: 9pt;
+    position: absolute;
+    width: var(--checkmark-size);
+    height: var(--checkmark-size);
     aspect-ratio: 1;
   }
   .checkmark svg polyline {
@@ -119,7 +114,7 @@
     --button-outline-border-color: var(--color-primary);
   }
   input[type="checkbox"]:checked ~ .checkmark {
-    opacity:1;
+    opacity: 1;
     transform: rotate(0deg) scale(100%);
   }
 </style>

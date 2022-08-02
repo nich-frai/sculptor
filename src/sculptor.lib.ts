@@ -8,6 +8,7 @@ export { default as Button } from './components/Button.svelte';
 export { default as RadioGroup } from './components/RadioGroup.svelte';
 export { default as RadioItem } from './components/RadioItem.svelte';
 export { default as PageTitle } from './components/PageTitle.svelte';
+export { default as Toast } from './components/Toast.svelte';
 
 // Tauri-related components
 export { default as TitleBar } from './window/TitleBar.svelte';

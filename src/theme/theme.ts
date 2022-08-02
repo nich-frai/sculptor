@@ -165,7 +165,7 @@ export const DefaultTheme = {
   // Components
   titlebar: {
     bg: "var(--surface-1)",
-    height: "clamp(30px, 5vh, 60px)",
+    height: "clamp(30px, 4.6vh, 60px)",
   },
 
   "icon-button": {

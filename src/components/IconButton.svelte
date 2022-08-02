@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from "./Icon.svelte";
 
-  export let style: "ghost" | "subtle" | "filled" | "outline" | "text" =
+  export let style: "ghost" | "subtle" | "filled" | "subtle-filled" |"outline" | "text" =
     "subtle";
 
   export let label: string;
@@ -17,7 +17,7 @@
   on:dblclick
   on:contextmenu
   class=" icon-button {style} {$$props.class ?? ''}"
-  style="{size != null ? 'height: ' + size : ''}
+  style="{size != null ? `height:${size};--icon-size:85%;` : ''}
 "
 >
   <Icon {src} />
@@ -76,5 +76,33 @@
 	button.filled:active {
 		background-color: var(--color-primary-900);
 		--icon-color: var(--text-color-on-primary-900);
+	}
+
+  button.subtle-filled {
+		background-color: var(--color-primary-200);
+		--icon-color: var(--text-color-on-primary-200);
+		transition: background-color var(--transition-duration);
+	}
+	button.subtle-filled:hover {
+		background-color: var(--color-primary);
+		--icon-color: var(--text-color-on-primary);
+	}
+	button.subtle-filled:active {
+		background-color: var(--color-primary-700);
+		--icon-color: var(--text-color-on-primary-700);
+	}
+
+  button.text {
+		background-color: transparent;
+		--icon-color: var(--text-color-on-surface);
+		transition: background-color var(--transition-duration);
+	}
+	button.text:hover {
+		background-color: var(--surface-1);
+		--icon-color: var(--text-color-on-surface);
+	}
+	button.text:active {
+		background-color: var(--surface-2);
+		--icon-color: var(--text-color-on-surface);
 	}
 </style>

@@ -30,6 +30,7 @@
     display: flex;
     column-gap: 0.5em;
     align-items: center;
+    cursor: pointer;
   }
 
   button.small-size {

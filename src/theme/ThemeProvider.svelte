@@ -1,5 +1,5 @@
 <script lang="ts">
-import { onMount, onDestroy} from "svelte";
+  import { onMount } from "svelte";
 
   import {
     flattenToCSSVariables,
@@ -10,10 +10,10 @@ import { onMount, onDestroy} from "svelte";
 
   export let theme: TSculptorTheme = DefaultTheme;
 
-  let themeStyleAttr : HTMLStyleElement;
+  let themeStyleAttr: HTMLStyleElement;
 
   onMount(() => {
-    themeStyleAttr = document.createElement('style');
+    themeStyleAttr = document.createElement("style");
     themeStyleAttr.textContent = `
     :root {
       ${printAsCSSVariables(flattenToCSSVariables(theme))}
@@ -21,16 +21,13 @@ import { onMount, onDestroy} from "svelte";
     `;
 
     document.body.prepend(themeStyleAttr);
-  });
-
-  onDestroy(() => {
-    themeStyleAttr.remove();
+    return () => {
+      themeStyleAttr.remove();
+    };
   });
 </script>
 
-<div
-  class="theme-provider"
->
+<div class="theme-provider">
   <slot />
 </div>
 
@@ -42,10 +39,9 @@ import { onMount, onDestroy} from "svelte";
   }
 
   :global(:where(html)) {
-    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-      sans-serif;
-    font-size: clamp(7pt, calc(7pt + 0.290825vw), 18pt);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 13px;
     accent-color: var(--color-primary);
     color: var(--text-color-on-surface);
   }
