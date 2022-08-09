@@ -36,6 +36,8 @@
     transition: background-color var(--transition-duration, 250ms);
     box-sizing: border-box;
     padding: var(--icon-button-padding, 0.25rem);
+    cursor: pointer;
+    --icon-color: var(--icon-button-color);
   }
 
   button:focus {

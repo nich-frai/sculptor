@@ -14,6 +14,7 @@ declare namespace svelte.JSX {
 		required? : boolean;
 		onclick? : CompositionEvent<T>;
 		onchange? : CompositionEvent<T>;
+		tabindex? : number;
 	}
 }
 

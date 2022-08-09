@@ -22,6 +22,7 @@
     <div class="input-container">
       <input
         type="checkbox"
+        tabindex="-1"
         {name}
         bind:checked
         on:change={() => {

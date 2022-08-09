@@ -42,5 +42,6 @@
     font-weight: 200;
     font-size: 0.7rem;
     opacity: 0.8;
+    position: relative;
   }
 </style>
