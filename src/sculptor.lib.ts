@@ -1,5 +1,5 @@
 // UI Components
-export { default as Icon } from './components/Icon.svelte';
+export { default as Icon, setIconsRoot } from './components/Icon.svelte';
 export { default as IconButton } from './components/IconButton.svelte';
 export { default as VerticalSeparator } from './components/VerticalSeparator.svelte';
 export { default as HorizontalSeparator } from './components/HorizontalSeparator.svelte';

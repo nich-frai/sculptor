@@ -20,12 +20,12 @@
 
 <style>
   button {
-    font-size: inherit;
+    font-size: 1em;
     text-align: var(--button-text-align, start);
     border: 0;
     margin: 0;
     padding: var(--button-padding, 0);
-    width: 100%;
+    width: var(--button-width, 100%);
     border-radius: var(--radius-1);
     display: flex;
     column-gap: 0.5em;

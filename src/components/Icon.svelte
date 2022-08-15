@@ -1,3 +1,10 @@
+<script context="module" lang="ts">
+	export let iconRootFolder = './icons';
+
+	export function setIconsRoot(root : string) {
+		iconRootFolder = root;
+	}
+</script>
 <script lang="ts">
 	export let src : string;
 	
@@ -8,7 +15,7 @@
 	$: {
 		// check if it is a svg image, else append ".svg" and preppend "icons/"
 		if(src.match(/\.(svg|png|webp)$/) == null) {
-			src = `./icons/${src}.svg`;
+			src = `${iconRootFolder}/${src}.svg`;
 		}
 	}
 </script>

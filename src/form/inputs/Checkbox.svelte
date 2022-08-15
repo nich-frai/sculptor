@@ -75,17 +75,18 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -5pt;
-    width: 10pt;
-    height: 10pt;
+    margin: -4.5pt;
+    width: 9pt;
+    height: 9pt;
     transform-origin: center center;
     transform: rotate(-45deg) scale(10%);
-    transition: transform var(--transition-duration) var(--transition-duration-fast);
+    transition: transform var(--transition-duration) var(--transition-duration-fast), 
+			opacity var(--transition-duration) var(--transition-duration-fast);
   }
   .checkmark svg {
     position: absolute;
-    width: 10pt;
-    height: 10pt;
+    width: 9pt;
+    height: 9pt;
     aspect-ratio: 1;
   }
   .checkmark svg polyline {
@@ -94,6 +95,6 @@
   input[type="checkbox"]:checked ~ .checkmark {
     opacity:1;
     transform: rotate(0deg) scale(100%);
-
   }
+
 </style>
