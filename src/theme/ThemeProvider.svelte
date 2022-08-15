@@ -27,25 +27,19 @@
   });
 </script>
 
-<div class="theme-provider">
-  <slot />
-</div>
+<slot />
 
 <style>
-  .theme-provider {
-    display: contents;
-    color: var(--text-color-on-surface);
-    accent-color: var(--color-primary);
-  }
-
   :global(:where(html)) {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 11px;
     accent-color: var(--color-primary);
     color: var(--text-color-on-surface);
+    background-color: var(--surface-0);
   }
-  :global(:where(div)) {
+
+  :global(:where(div, section, main)) {
     box-sizing: border-box;
   }
 </style>

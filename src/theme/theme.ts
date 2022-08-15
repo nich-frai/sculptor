@@ -1,8 +1,23 @@
 import type { PartialDeep } from "type-fest";
 import { deepmerge } from "../utils/deepmerge";
 
+/**
+ * Default Theme
+ * -------------
+ * 
+ * Exposes props as normalized css variables
+ * 
+ * Some values are copied from open-props
+ * @link https://open-props.style/
+ * 
+ */
 export const DefaultTheme = {
-  "item-height": "3rem",
+  size : {
+		"root" : "11px",
+		"item" : "3rem"
+	},
+	"item-height": "3rem",
+
   color: {
     secondary: {
       h: "196",
@@ -122,9 +137,42 @@ export const DefaultTheme = {
         "900": "#ffffff",
       },
     },
+
+		size: {
+			0 : "0.75rem",
+			1 : "1rem",
+			2 : "1.1rem",
+			3 : "1.25rem",
+			4 : "1.5rem",
+			5 : "2rem",
+			6 : "2.5rem",
+			7 : "3rem",
+			8 : "3.5rem",
+			9 : "4rem"
+		},
+
   },
 
   radius: ["0px", "3px", "5px", "7px", "10px"],
+
+	shadow : {
+		color : '220 3% 15%',
+		strength : "1%",
+		0 : "0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+		1 : "0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%))",
+		2 : "0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)), 0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%))",
+		3 : "0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)), 0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%))",
+		4 : "0 -1px 2px 0 hsl(var(--shadow-color) /	calc(var(--shadow-strength) + 2%)), 0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)), 0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%))",
+		5 : "0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)), 0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)), 0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)), 0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)), 0 100px 80px -2px hsl(var(--shadow-color) / 		calc(var(--shadow-strength) + 7%))",
+
+		inner : {
+			0 : "inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+			1 : "inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+			2 : "inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+			3 : "inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))",
+			4 : "inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%))"
+		},
+	},
 
   surface: {
     "0": "#f8f8f8",

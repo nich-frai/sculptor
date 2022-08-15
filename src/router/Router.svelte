@@ -12,7 +12,7 @@
    * or to inspect/debug current router state
    */
   export let name: string | undefined = undefined;
-  export let root: boolean = false;
+  export let root: boolean | undefined = undefined;
   export let path: string = "";
   export let stateStorage : TRouterStateStorage | undefined = undefined;
 
@@ -46,8 +46,13 @@
       });
     }
 
+		if(root === undefined ) root = parentRouter == null;
+
     // if this is not the root router check visibility by asking the current navigation state to the parent router and seeing if the path matches
     if (!root) {
+			
+			if(parentRouter == null) throw new Error("Router was set as non-root (root = false) but lacks a parent router!");
+			
       parentRouter.state.subscribe((s) => {
         let matches = pathMatcher(s.path) !== false;
         isRouterVisible = matches !== false;
